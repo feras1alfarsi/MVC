@@ -1,0 +1,28 @@
+﻿@model Product
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+
+<form asp-action="Delete" method="post">
+    <div>
+        <label> Name:</label>
+        <input asp-for="Name" name="Name" class="form-control" disabled />
+    </div>
+
+    <div>
+        <label> Quantity </label>
+        <input type="number" input asp-for="Quantity" name="Quantity" disabled class="form-control mb-3">
+    </div>
+
+    <div>
+        <label> Price </label>
+        <input type="number" asp-for="Price" name="Price" disabled class="form-control mb-3">
+    </div>
+    <hr>
+    <button type="submit"  class="btn btn-danger">Delete</button>
+
+
+</form>

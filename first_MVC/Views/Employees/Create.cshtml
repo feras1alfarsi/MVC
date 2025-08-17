@@ -1,0 +1,40 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+<form asp-action="Create" method="post">
+    <div>
+        <label> First Name</label>
+        <input name="First_Name" class="form-control" />
+    </div>
+
+    <div>
+        <label> Last Name</label>
+        <input name="Last_Name" class="form-control" />
+    </div>
+
+
+    <div>
+        <label> Phone </label>
+        <input type="number" name="Phone" class="form-control mb-3">
+    </div>
+
+    <div>
+        <label> Salary </label>
+        <input type="number" name="Salary" class="form-control mb-3">
+    </div>
+
+    <div>
+        <label> Commission </label>
+        <input type="number" name="Commission" class="form-control mb-3">
+    </div>
+
+    <button type="submit" class="btn btn-primary">save</button>
+
+</form>
+
+
+
+

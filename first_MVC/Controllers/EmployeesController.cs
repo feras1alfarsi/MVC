@@ -28,5 +28,52 @@ namespace first_MVC.Controllers
             IEnumerable<Employee> employee = _context.Employees.ToList();
             return View(employee);
         }
+
+        [HttpGet]
+        public IActionResult Create()
+        {
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Employee employee)
+        {
+            _context.Employees.Add(employee);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int Id)
+        {
+            var cat = _context.Employees.Find(Id);
+            return View(cat);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Employee employee)
+        {
+
+            _context.Employees.Update(employee);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int Id)
+        {
+            var cat = _context.Employees.Find(Id);
+            return View(cat);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Employee employee)
+        {
+
+            _context.Employees.Remove(employee);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

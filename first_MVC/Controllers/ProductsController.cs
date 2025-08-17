@@ -34,5 +34,45 @@ namespace first_MVC.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Create(Product product)
+        {
+            _context.Products.Add(product);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int Id)
+        {
+            var cat = _context.Products.Find(Id);
+            return View(cat);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Product product)
+        {
+
+            _context.Products.Update(product);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public IActionResult Delete(int Id)
+        {
+            var cat = _context.Products.Find(Id);
+            return View(cat);
+        }
+
+        [HttpPost]
+        public IActionResult Delete(Product product)
+        {
+
+            _context.Products.Remove(product);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
     }
 }

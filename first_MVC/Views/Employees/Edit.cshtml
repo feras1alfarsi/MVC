@@ -1,0 +1,38 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+
+<form asp-action="Edit" method="post">
+    <div>
+        <label>First Name:</label>
+        <input asp-for="First_Name" name="First_Name" class="form-control" />
+    </div>
+
+    <div>
+        <label> Last Name:</label>
+        <input asp-for="Last_Name" name="Last_Name" class="form-control" />
+    </div>
+
+    <div>
+        <label> Phone </label>
+        <input asp-for="Phone" type="number" name="Phone" class="form-control mb-3">
+    </div>
+
+    <div>
+        <label> Salary </label>
+        <input asp-for="Salary" type="number" name="Salary" class="form-control mb-3">
+    </div>
+
+    <div>
+        <label> Commission </label>
+        <input asp-for="Commission" type="number" name="Commission" class="form-control mb-3">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Edit</button>
+
+
+</form>
