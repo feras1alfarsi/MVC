@@ -13,13 +13,22 @@
     </div>
 
     <div>
+        <label> CategoryId </label>
+        <select asp-for="CategoryId" class="form-control" asp-items="@ViewBag.Categories">
+            <option disabled value="0">Select Category</option>
+
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+
+    <div>
         <label> Quantity </label>
-        <input type="number" name="Quantity" class="form-control mb-3">
+        <input type="number" asp-for="Quantity" name="Quantity" class="form-control mb-3">
     </div>
 
     <div>
         <label> Price </label>
-        <input type="number" name="Price" class="form-control mb-3">
+        <input type="number" asp-for="Price" name="Price" class="form-control mb-3">
     </div>
 
     <button type="submit" class="btn btn-primary">Edit</button>

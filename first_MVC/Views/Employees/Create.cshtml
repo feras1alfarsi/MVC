@@ -5,35 +5,59 @@
 
 <h1>Create</h1>
 <form asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
     <div>
         <label> First Name</label>
-        <input name="First_Name" class="form-control" />
+        <input asp-for="First_Name" name="First_Name" class="form-control" />
+        <span asp-validation-for="First_Name" class="text-danger"></span>
     </div>
 
     <div>
         <label> Last Name</label>
-        <input name="Last_Name" class="form-control" />
+        <input asp-for="Last_Name" name="Last_Name" class="form-control" />
+        <span asp-validation-for="Last_Name" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label> Username</label>
+        <input asp-for="Username" name="Username" class="form-control" />
+        <span asp-validation-for="Username" class="text-danger"></span>
+    </div>
+
+    <div>
+        <label> Password</label>
+        <input asp-for="Password" name="Password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
     </div>
 
 
     <div>
         <label> Phone </label>
-        <input type="number" name="Phone" class="form-control mb-3">
+        <input asp-for="Phone" type="number" name="Phone" class="form-control mb-3">
+        <span asp-validation-for="Phone" class="text-danger"></span>
     </div>
 
     <div>
         <label> Salary </label>
-        <input type="number" name="Salary" class="form-control mb-3">
+        <input asp-for="Salary" type="number" name="Salary" class="form-control mb-3">
+        <span asp-validation-for="Salary" class="text-danger"></span>
     </div>
 
     <div>
         <label> Commission </label>
-        <input type="number" name="Commission" class="form-control mb-3">
+        <input asp-for="Commission" type="number" name="Commission" class="form-control mb-3">
+        <span asp-validation-for="Commission" class="text-danger"></span>
     </div>
 
     <button type="submit" class="btn btn-primary">save</button>
 
 </form>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+
+}
 
 
 

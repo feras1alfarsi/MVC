@@ -5,25 +5,58 @@
 
 <h1>Create</h1>
 <form asp-action="Create" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
     <div>
         <label> Product Name</label>
-        <input name="Name" class="form-control"/>
+        <input asp-for="Name" name="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
     </div>
+    
+    <div>
+        <label> CategoryId </label>
+        <select asp-for="CategoryId" class="form-control" asp-items="@ViewBag.Categories">
+            <option selected disabled value="0">Select Category</option>
+            
+            @* <option value="0">Select Category</option>
+            <option value="1">iPhone 15 Pro Max</option>
+            <option value="2">Samsung Galaxy S24 Ultra</option>
+            <option value="3">Google Pixel 8 Pro</option>
+            <option value="4">OnePlus 12</option>
+            <option value="5">Xiaomi 13 Ultra</option>
+            <option value="6">Sony Xperia 1 V</option>
+            <option value="7">Motorola Edge 40 Pro</option>
+            <option value="8">Oppo Find X6 Pro</option>
+            <option value="9">Huawei Mate 60 Pro</option>
+            <option value="10">Asus ROG Phone 7</option>  *@
+
+        </select>
+        <span asp-validation-for="CategoryId" class="text-danger"></span>
+    </div>
+    
 
 
     <div>
         <label> Quantity </label>
-        <input type="number" name="Quantity" class="form-control mb-3">
+        <input asp-for="Quantity" type="number" name="Quantity" class="form-control mb-3">
+        <span asp-validation-for="Quantity" class="text-danger"></span>
     </div>
 
     <div>
         <label> Price </label>
-        <input type="number" name="Price" class="form-control mb-3">
+        <input asp-for="Price" type="number" name="Price" class="form-control mb-3">
+        <span asp-validation-for="Quantity" class="text-danger"></span>
     </div>
 
     <button type="submit" class="btn btn-primary">save</button>
 
 </form>
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+
+}
 
 
 
